@@ -1,0 +1,65 @@
+{
+  "name": "merge-it-local",
+  "version": "1.2.0",
+  "private": true,
+  "description": "Local app for converting Excel/CSV rows into PowerPoint presentations.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win --x64 --config.win.signAndEditExecutable=false",
+    "dist": "electron-builder --win --x64 --config.win.signAndEditExecutable=false"
+  },
+  "keywords": [
+    "pptx",
+    "excel",
+    "csv",
+    "merge-it"
+  ],
+  "author": "Man Singh Rana (TsGuideMan)",
+  "license": "MIT",
+  "dependencies": {
+    "jszip": "^3.10.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^25.1.4"
+  },
+  "build": {
+    "appId": "com.margeitpro.mergeitlocal",
+    "productName": "Merge It",
+    "executableName": "MergeIt",
+    "artifactName": "MergeIt-Setup-${version}.${ext}",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!**/*.map",
+      "!dist/**",
+      "!**/.git/**"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon",
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Merge It"
+    }
+  },
+  "allowScripts": {
+    "electron@31.7.7": true
+  }
+}

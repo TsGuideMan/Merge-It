@@ -1,0 +1,23 @@
+# ---- Dependencies ----
+node_modules/
+
+# ---- Build output ----
+dist/
+build/*.blockmap
+
+# ---- Logs ----
+*.log
+npm-debug.log*
+
+# ---- OS / editor junk ----
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+*~
+
+# ---- Env / secrets ----
+.env
+.env.*
+*.local
